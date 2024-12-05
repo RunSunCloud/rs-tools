@@ -14,9 +14,7 @@ if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]; then
     echo "Upgrading from version $CURRENT_VERSION to $LATEST_VERSION..."
 
     # Download the latest version
-    curl -L -o /tmp/ "$ASSET_URL"
     wget $DOWNLOAD_URL/${LATEST_VERSION}.tar.gz -P /tmp/
-
 
     # Move the new binary to replace the old one
     tar -xzvf /tmp/${LATEST_VERSION}.tar.gz -C ./ --strip-components 1
